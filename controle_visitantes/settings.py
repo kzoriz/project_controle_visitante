@@ -35,16 +35,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    
-   
-   
-    
+    'django.contrib.staticfiles',   
+]
+
+INSTALLED_APPS += [
+    'widget_tweaks',
 ]
 INSTALLED_APPS += [
-'usuarios',
-'porteiros',
-'visitantes',
+    'usuarios',
+    'porteiros',
+    'visitantes',
 ]
 
 AUTH_USER_MODEL = 'usuarios.Usuario'

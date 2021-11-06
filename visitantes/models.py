@@ -2,7 +2,16 @@ from django.db import models
 from django.db.models.deletion import PROTECT
 #from django.db.models.fields.related import ForeignKey
 
+
+
 class Visitante(models.Model):
+
+    STATUS_VISITANTE = [
+        ("AGUARDANDO","Aguardando autorização"),
+        ("EM_VISITA","Em visita"),
+        ("FINALIZADO","Visita finalizada"),
+    ]
+    status = models.CharField(verbose_name="Status",max_length=10,choices= STATUS_VISITANTE,default="AGUARDANDO")
     nome_completo= models.CharField(verbose_name="Nome completo", max_length=194)
     cpf=models.CharField(verbose_name="CPF",max_length=11)
     data_nascimento=models.DateField(verbose_name="Data de nascimento", auto_now=False, auto_now_add=False)

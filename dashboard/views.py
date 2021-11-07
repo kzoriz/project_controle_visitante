@@ -16,6 +16,7 @@ def index(request):
     mes_atual = hora_atual.month
 
     visitantes_mes = todos_visitantes.filter(horario_chegada__month=mes_atual)
+    todos_visitantes = Visitante.objects.order_by("-horario_chegada")
 
     context= {
         "nome_pagina": "Início da dashboard",

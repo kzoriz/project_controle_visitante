@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +28,10 @@ SECRET_KEY = 'django-insecure-&hj_5g(0f@ez)iippzk!8^9tzhdhq06fv^80d2zl-chw=+fpuv
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+#sys.path.append(
+#os.path.join(BASE_DIR, "apps")
+#)
 
 # Application definition
 
@@ -45,6 +51,7 @@ INSTALLED_APPS += [
     'usuarios',
     'porteiros',
     'visitantes',
+    'dashboard',
 ]
 
 AUTH_USER_MODEL = 'usuarios.Usuario'

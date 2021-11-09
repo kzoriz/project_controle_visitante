@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from visitantes.models import Visitante
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
 
     todos_visitantes= Visitante.objects.all()
